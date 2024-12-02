@@ -77,9 +77,6 @@ string filename = "C:\\Users\\Jaron L\\Desktop\\Freizeit\\AdventOfCode\\Day1\\in
 vector<int> list1;
 vector<int> list2;
 
-vector<int> list3;
-vector<int> list4;
-
 
 readAndSplit(filename, list1, list2);
 int test = similarityScore(list1, list2);
