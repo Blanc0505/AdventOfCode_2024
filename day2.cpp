@@ -52,6 +52,25 @@ int safeReports(vector<int>& a) {
    return 1;
 }
 
+int safeReportsAdvanced(vector<int>& a) {
+    if(safeReports(a)) {
+        return 1;
+    }
+
+    for(size_t i = 0; i < a.size(); i++) {
+        vector<int> aReduced;
+        for(size_t j = 0; j < a.size(); j++) {
+            if(j != i) {
+                aReduced.push_back(a[j]);
+            }
+        }
+
+        if (safeReports(aReduced)) {
+            return 1; 
+        }
+    } 
+    return 0; 
+}
 
 
 int main() {
@@ -79,7 +98,8 @@ int main() {
         cout << std::endl;
     	*/
         // Safe Reports für diese Zeile berechnen
-        sumSafeReports += safeReports(numbers);
+        //sumSafeReports += safeReports(numbers);
+        sumSafeReports += safeReportsAdvanced(numbers);
     }
 
     file.close();
